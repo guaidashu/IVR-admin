@@ -17,8 +17,8 @@ export default {
    * @description api请求基础路径
    */
   baseUrl: {
-    dev: 'http://www.ivr.com/api/',
-    pro: 'http://www.ivr.com/api/'
+    dev: 'http://ivr10s.allcpx.com/api/',
+    pro: 'http://ivr10s.allcpx.com/api/'
   },
   /**
    * @description 默认打开的首页的路由name值，默认为home

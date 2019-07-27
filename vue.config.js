@@ -40,7 +40,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/api': {
-                target: 'http://www.ivr.com/api/',
+                target: 'http://ivr10s.allcpx.com/api/',
                 ws: true,
                 changeOrigin: true,
                 pathRewrite: {
