@@ -8,7 +8,7 @@
                 <Input type="text" v-model="cost.exchange_rate"></Input>
             </FormItem>
             <FormItem label="选择日期">
-                <DatePicker @on-change="getData" format="yyyy-MM-dd"></DatePicker>
+                <DatePicker @on-change="getDate" format="yyyy-MM-dd"></DatePicker>
             </FormItem>
         </Form>
     </div>
@@ -30,7 +30,7 @@
             return {}
         },
         methods: {
-            getData(data) {
+            getDate(data) {
                 this.cost.date = data
             },
             init() {

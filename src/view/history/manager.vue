@@ -1,6 +1,10 @@
 <template>
     <div>
-        <Button type="success" @click="init" :loading="loading">刷新</Button>
+        <DatePicker @on-change="getStartDate" format="yyyy-MM-dd" placeholder="选择开始日期"></DatePicker>
+        <DatePicker @on-change="getEndDate" format="yyyy-MM-dd" placeholder="选择结束日期"
+                    style="margin-left: 15px;"></DatePicker>
+        <Button type="primary" @click="init" style="margin-left: 15px;" :loading="loading">查询</Button>
+        <Button type="success" @click="init" style="margin-left: 15px;" :loading="loading">刷新</Button>
         <div style="width: 100%; height: 15px;"></div>
         <Table border :data="data" :columns="columns" :loading="loading">
             <template slot-scope="{row, index}" slot="cost">
@@ -69,6 +73,10 @@
                         slot: 'action'
                     }
                 ],
+                condition: {
+                    start_time: '',
+                    end_time: ''
+                },
                 total: 20,
                 title: '',
                 page: 1,
@@ -99,6 +107,12 @@
             },
             closeDetailModal() {
                 this.detailModal = false
+            },
+            getStartDate(data) {
+                this.condition.start_time = data
+            },
+            getEndDate(data) {
+                this.condition.end_time = data
             },
             init() {
                 this.getHistoryList()

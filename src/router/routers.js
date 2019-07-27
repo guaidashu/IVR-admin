@@ -67,6 +67,15 @@ export default [
                     icon: 'md-home'
                 },
                 component: () => import('@/view/history/manager')
+            },
+            {
+                path: 'retain_history',
+                name: 'retain_history',
+                meta: {
+                    title: '留存数据查询',
+                    icon: 'md-home'
+                },
+                component: () => import('@/view/history/retain-history')
             }
         ]
     },
