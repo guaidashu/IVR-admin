@@ -26,7 +26,6 @@
         data() {
             return {
                 qqFans,
-                test: '',
                 qqFans2
             }
         }
