@@ -27,7 +27,6 @@ export default {
       qqFans,
       qqFans2
     }
-
   }
 }
 </script>
