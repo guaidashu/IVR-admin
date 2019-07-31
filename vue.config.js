@@ -39,12 +39,12 @@ module.exports = {
   // 这里写你调用接口的基础路径，来解决跨域，如果设置了代理，那你本地开发环境的axios的baseUrl要写为 '' ，即空字符串
     devServer: {
         proxy: {
-            '/api': {
-                target: 'http://ivr10s.allcpx.com/api/',
+            '/back': {
+                target: 'http://ivr_admin.allcpx.com/back/api/',
                 ws: true,
                 changeOrigin: true,
                 pathRewrite: {
-                    '^/api': '/',    //代理的路径
+                    '^/back': '/',    //代理的路径
                 }
             }
         },
