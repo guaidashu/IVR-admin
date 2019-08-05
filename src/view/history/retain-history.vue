@@ -62,7 +62,15 @@
                         width: 90
                     },
                     {
-                        title: '成功',
+                        title: '成功人数',
+                        key: 'success_people'
+                    },
+                    {
+                        title: '总拨打人数',
+                        key: 'call_people'
+                    },
+                    {
+                        title: '成功次数',
                         key: 'success',
                         width: 90
                     },
