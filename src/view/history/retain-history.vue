@@ -7,6 +7,9 @@
         <Button type="success" @click="init" style="margin-left: 15px;" :loading="loading">刷新</Button>
         <div style="width: 100%; height: 15px;"></div>
         <Table :data="data" border :columns="columns" :loading="loading">
+            <template slot-scope="{row, index}" slot="call_permission_rate">
+                <span v-text="getCallPermissionRate(row)"></span>%
+            </template>
             <template slot-scope="{row, index}" slot="cost">
                 <span v-text="getCost(row)"></span>
             </template>
@@ -40,6 +43,14 @@
                         key: 'install_times'
                     },
                     {
+                        title: '授权人数',
+                        key: 'call_permission_people'
+                    },
+                    {
+                        title: '授权率',
+                        slot: 'call_permission_rate'
+                    },
+                    {
                         title: '花费/美元',
                         slot: 'cost',
                     },
@@ -54,7 +65,7 @@
                     {
                         title: '请求次数',
                         key: 'request_times',
-                        width: 120
+                        width: 90
                     },
                     {
                         title: '允许次数',
@@ -66,8 +77,8 @@
                         key: 'success_people'
                     },
                     {
-                        title: '总拨打人数',
-                        key: 'call_people'
+                        title: '当天拨打人数',
+                        key: 'call_people',
                     },
                     {
                         title: '成功次数',
@@ -111,6 +122,11 @@
                         this.loading = false
                     }
                 })
+            },
+            getCallPermissionRate(row) {
+                let result = row.call_permission_people / row.install_times;
+                result = result ? result : 0;
+                return (result * 100).toFixed(2)
             },
             init() {
                 this.getRetainHistoryData()
