@@ -77,6 +77,10 @@
                         key: 'success_people'
                     },
                     {
+                        title: '总拨打人数',
+                        key: 'all_call_people'
+                    },
+                    {
                         title: '当天拨打人数',
                         key: 'call_people',
                     },
