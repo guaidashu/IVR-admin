@@ -40,11 +40,13 @@
                     },
                     {
                         title: '安装数',
-                        key: 'install_times'
+                        key: 'install_times',
+                        width: 70
                     },
                     {
                         title: '授权人数',
-                        key: 'call_permission_people'
+                        key: 'call_permission_people',
+                        width: 70
                     },
                     {
                         title: '授权率',
